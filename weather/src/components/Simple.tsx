@@ -47,6 +47,11 @@ const Simple = ({ weatherData, tempType }: WeatherProps) => {
               weatherData.tempUnit.toUpperCase()}
           </p>
           <p className="text-2xl sm:text-6xl xl:text-8xl">{time}</p>
+          {/* --- NEW WIND READOUT --- */}
+          <p className="text-xl sm:text-4xl xl:text-6xl opacity-80 mt-2">
+            💨 {Math.round(weatherData.current.windSpeed10m)} {weatherData.speedUnit} {getWindDirection(weatherData.current.windDirection10m)}
+          </p>
+          {/* ------------------------- */}
           <p className="fixed bottom-3 right-3 italic text-xs sm:text-base xl:text-3xl">
             Last Updated{" "}
             {new Date(weatherData.current.time)
